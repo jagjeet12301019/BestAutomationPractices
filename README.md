@@ -53,10 +53,8 @@ This practice will be useful in ensuring that the implementation is flexible eno
   
 **15.) Avoid code duplication and always wrap Selenium API calls** - Any code which is to be used multiple time in your framework should always be created as separate APIs or utilities or generic functions. This enhance usability, maintenance and code size. Wrapping selenium API methods also give us option to add better logging as per project. We can also overload the methods with more and more information.
   
-
-
   
-
-  
-  
-  
+****IN SELENIUM WE SHOULD AVOID AUTOMATING****
+**1.) Automation of dowloading files** -> Because we can't check the speed of download and therefore not sure when to stop execution. Either developed should put a message in code once download gets finished.
+**2.) Automation of Captcha** -> Captcha are designed to prevent automation. Either these should be disbaled in automation test environment or adding hook for bypassing the captcha.
+**3.) Two Factor Authorization** -> It is difficult to automate this with selenium.
