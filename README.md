@@ -18,6 +18,25 @@ SYNTAX ->      Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)
                 .ignoring(NoSuchElementException.class);  // While waiting ignore NoSuchElementException.class  
 LINK to know more about WebDriver waits - https://www.selenium.dev/documentation/webdriver/waits/  
 
+  
+**2.) Always Name the Test methods, classes and suites appropriately - ** It has two reasons:
+  a.) Your colleagues may need to work in enahancing the framework that you have written
+  b.) Whenever a test case fails it should be easy to identify which functionality is getting broken by just looking at the names of test cases.
+  
 
-**2.) Always Name the Test Cases and Test Suites appropriately -** 
+**3.) Keep Browser's default zoom level to 100% -** -> Browser zoom level should always 100% so that the native mouse events can be set to correct coordinates.
+  Sometime you see on browser process is working fine but not on others, specifically happens on outdated browsers like internet explorer.    
+  Whenever using internet browser always make sure to set zoom level to 100% . Secondly make sure the **protected mode setting in IE for each zone must be same otherwise No such window exception can appear.**
+  
+
+**4.) Maximize the Browser Window** -> Always maximize the browser window immediately after loading the URL. Not maximizing can affect the screenshots generation.
+  
+
+**5.) IMPORTANT ONE - Choose the most suited Web Locator** -> We see many a times whenever there are changes in products, test cases starts failing because of changes in Webelement attributes of a DOM. So, we should always have a strategy for selecting the best locators.We can keep below factors in mind while selecting the locators for test automation -  
+  **Factor a.)** LinkText or PartialLinkText should preferred when there is a dynamic situation. But should be avoided if application is to be used internationally (becoz with language change LinkText will change). So for internation app or localization testing, we should use **partial href**, so that even if the language changes the href should point to the right URL.  
+  **Factor b.)** In noraml UIs general locator order is ID >Name >CSSSelector >Xpath . **Why Xpath is on last although we use it frequently ?** because XPath engines vary from browser to browser, so working on one browser do not gurantee its working on another browser. IE does not even have the native Xpath engine and uses JavaScript Xpath Query engine and it is slower than native Xpath engine, which can create problems.  
+  **Factor c.)** If project in starting stage Dev team can be instructed to use static IDs or meaning classes for differentiating elements.  
+  
+  
+  
   
