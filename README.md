@@ -35,5 +35,7 @@ LINK to know more about WebDriver waits - https://www.selenium.dev/documentation
   **Factor c.)** If project in starting stage Dev team can be instructed to use static IDs or meaning classes for differentiating elements.  
   
   
+
+  
   
   
