@@ -5,15 +5,17 @@ https://www.lambdatest.com/blog/selenium-best-practices-for-web-testing/
 Alternatives to deal with **NO SUCH ELEMENT** Exception-- Selenium provides inbuilt wait methods and we should alway prefer to use these as below :  
 
 **a.) Implicit Wait -** If element takes less than 5 seconds to load selenium moves on to next line of code and do not hold the process for all 5 seoconds.
-SYNTAX - driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));  
+SYNTAX ->    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));  
+
 **b.) Explicit Wait -** Explicit wait can be provided with respect to WebElement. So it will hold the execution untill the particular element loads upto a predefined time. If elements loads earlier then the execution moves to next line of code.  
-SYNTAX -     WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));  
-             wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".classlocator")));  
+SYNTAX ->     WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));  
+              wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".classlocator")));  
+             
 **c.) Fluent Waits -** Fluent wait instance allow to wait for some specific period of time along with freqeuncy duration in which it will check the condition and if it matches it moves on to next line of code without waiting for full pre-specified time.  
-SYNTAX -     Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)  
-              .withTimeout(Duration.ofSeconds(30))  // Predfined total time limit it gonna be wait  
-              .pollingEvery(Duration.ofSeconds(5))  // Frequency - after every 5 seconds it will check the condition if element found it can stop at 5 or 10 or 15 secs  
-              .ignoring(NoSuchElementException.class);  
+SYNTAX ->      Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)  
+                .withTimeout(Duration.ofSeconds(30))  // Predfined total time limit it gonna be wait  
+                .pollingEvery(Duration.ofSeconds(5))  // Frequency, after every 5 secs it will check the condition if element found it can stop at 5 or 10 or 15 secs  
+                .ignoring(NoSuchElementException.class);  // While waiting ignore NoSuchElementException.class  
 LINK to know more about WebDriver waits - https://www.selenium.dev/documentation/webdriver/waits/  
 
 
