@@ -1,3 +1,11 @@
+# Automation FRAMEWORK STRATEGY -
+A practical and consistent test automation strategy that addresses maintainability and consistency of the SUT. It may not be possible to apply the test automation strategy in the same way to both old and new parts of the SUT. When creating the automation strategy, consider the costs, benefits and risks of applying it to different parts of the code. Consideration should be given to testing both the user interface and the API with automated test cases to check the consistency of the results. Before defining the test strategy and starting with the automation framwork some factor to take care are ::  
+1.) Analyze the risks (Analytical Approach from Manual where we prioritize test cases based on criticality of business and frequnecy of use) , business flows (some go throughs of the user journeys), technical architecture of application to be tested (API,microservies,interfaces, database and UI), Cost Benefit ratio, organizational practices.  
+2.) Then anayse and select a tool based on technical limitations, community support, Economic factor, Compatibility with tools already in practice in the organization, skills in team.  
+3.) Once we have tool and basic blueprint of the Strategy then will go towards approach for Framework development.  
+4.) Once we have some approach like Data-Driven then we should setup some Automation practices document so that everyone in team is on same page.  
+5.) Then start setting test framework with below guides.  
+
 # BestAutomationPractices - Guide for best automation frame work as per SELENIUM 4
 https://www.lambdatest.com/blog/selenium-best-practices-for-web-testing/
 
