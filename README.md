@@ -1,6 +1,30 @@
 # BestAutomationPractices - Guide for best automation frame work as per SELENIUM 4
 https://www.lambdatest.com/blog/selenium-best-practices-for-web-testing/
 
+**BEST AUTOMATION FRAMEWORK PRACTICES MIXED LAMBDATEST AND ISTQB**  
+1.) **Implement Reporting Facilities** - Should provide information about Pass/Fail/Not-Run/Skipped Test Cases and should be able to inform higher management about overall quality of SUT (System Under Test). e.g. Extent Reports.  
+Naming of the test cases should also let testers know where the failure is happening.  
+
+2.) **Enable Easy Troubleshooting**  - Efficient logging mechanism (Log4j) should provide easy way to troubleshoot the errors. That can be achieved by putting in well defined error messages at right places and should tell in which class,method,testcase and objects the error is coming.  
+
+3.) **Address the Test Environment appropriately** - Test tools are dependent upon consistency on the test envrionment. So to handle the setups appropriately is very much required. e.g Best Base classes which can define what should be done before and after the suite or class or test method (Use of framwork like TestNG is helpful here) . Also in this part we can cover WebDriverFactory singleton pattern.Login information and testdata and services setup. Keep Browser's default zoom level to 100%, Maximize browser window.   
+
+4.) **Document automated test cases** - Test cases automated should always be documented to check overall coverage of the application.  
+
+5.) **Trace the automated test** - Framework should allow Test engineers to trace individual steps in TCs.
+
+6.) **Enable easy maintenance** - By following dvelopment principles- Test engineer should be able to analyze, change and expend the fraework or test case coverage. here better use of generic functions, utilities and wrappers should be considered.Page object model can also help in maintaining the page objects and action methods.  
+
+7.) **Keep the Test Case Upto date** - Whever due to change or upgrade any test is not working do not disable the tests, else FIX THEM.
+
+8.) **Retire Tests** which are not required due to functionality change
+
+9.) **Monitor and Restore the SUT** Framwork should have capanility to skip any test which is failing due to error on the other hand it also should some basic checks if which are not working then stop the execution.  
+
+**Other Are** refrain from flakiness issues in UI (use appropriate locator strategy), Test cases should be independent of each other, SHould not use hard coded values, A Better mechanism to create (may be in excel as input file) and delete the test data (may be with help of dev team del from database).
+
+
+
 ****PERFORMANCE WISE TODOs****  
 ****1.)Avoid Blocking using sleep calls****- We should abstain from using Thread.sleep within the test cases. Loading of web elements on any website depends on many factors like load on the server, netwrok speed, device (machine) capabilities, access location, browser (some time performing tests on out-dated browsers) and any more. So keeping this in view we can never sure how much exact time will the element will be going to take. Use of sleep blocking calls blocks the test thread for pre-specified time interval. For example we are putting Thread.sleep(5000) which 5 seconds however but when we are running the test framework using some other environments it is taking 10 seconds and ultimately our test will fail with No such Element exception. If we take more time in the Thread.sleep(9000) then it can increase the time of test pack execution i.e. if the test getting executed within 6 seconds it will still keep the thread on hold for another 3 seconds. Lets say if we have 1000 test cases then extra time will be e.g. 1000*3 seconds .
 Alternatives to deal with **NO SUCH ELEMENT** Exception-- Selenium provides inbuilt wait methods and we should alway prefer to use these as below :  
